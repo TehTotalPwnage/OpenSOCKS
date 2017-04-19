@@ -2,6 +2,10 @@
 
 trap stop SIGTERM
 
+debug() {
+    sleep infinity
+}
+
 start() {
     openvpn --askpass /opensocks/askpass --config /opensocks/config.ovpn &
     PID[0]=$!
@@ -24,6 +28,9 @@ stop() {
 }
 
 case $1 in
+    "debug")
+        debug
+        ;;
     "start")
         shift 1
         start "$@"

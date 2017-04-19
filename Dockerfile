@@ -10,6 +10,7 @@ RUN apt-get install -y openvpn dante-server
 COPY openvpn/ /opensocks/
 COPY sockd.conf /etc/danted.conf
 COPY opensocks.sh /usr/local/bin/opensocks
+
 RUN chmod +x /usr/local/bin/opensocks
 # Expose NGINX listening port.
 EXPOSE 1080
